@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public Sprite[] cardFaces;
     public GameObject cardPrefab;
+    public GameObject deckButton;
 
     public GameObject[] bottomPos;
     public GameObject[] topPos;
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public List<string>[] bottoms;
     public List<string>[] tops;
+    public List<string> triplesOnDisplay = new List<string>();
+    public List<List<string>> deckTriples = new List<List<string>>(); // list of chunks of 3 each
 
     private List<string> bottom0 = new List<string>();
     private List<string> bottom1 = new List<string>();
@@ -26,6 +29,10 @@ public class GameManager : MonoBehaviour
     private List<string> bottom6 = new List<string>();
 
     public List<string> deck;
+    public List<string> discardPile = new List<string>();
+    private int deckLocation;
+    private int triples;
+    private int triplesRemainder;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +53,7 @@ public class GameManager : MonoBehaviour
         Shuffle(deck);
         Sort();
         StartCoroutine(Deal());
+        SortDeckIntoTriples();
     }
 
     public static List<string> GenerateDeck()
@@ -96,8 +104,17 @@ public class GameManager : MonoBehaviour
                 
                 yOffset += 0.3f;
                 zOffset += 0.03f;
+                discardPile.Add(card);
             }
         }
+        foreach (string card in discardPile)
+        {
+            if (deck.Contains(card))
+            {
+                deck.Remove(card);
+            }
+        }
+        discardPile.Clear();
     }
 
     private void Sort() // organize into the 7 piles at the bottom
@@ -110,5 +127,82 @@ public class GameManager : MonoBehaviour
                 deck.RemoveAt(deck.Count - 1);
             }
         }
+    }
+
+    public void SortDeckIntoTriples() // TODO: only draw 1 card at a time instead
+    {
+        triples = deck.Count / 3;
+        triplesRemainder = deck.Count % 3;
+        deckTriples.Clear();
+
+        int modifier = 0;
+        for (int i = 0; i < triples; i++)
+        {
+            List<string> myTriples = new List<string>();
+            for (int j = 0; j < 3; j++)
+            {
+                myTriples.Add(deck[j + modifier]);
+            }
+            deckTriples.Add(myTriples);
+            modifier += 3;
+        }
+        if (triplesRemainder != 0) // not divisible by 3
+        {
+            List<string> myRemainders = new List<string>();
+            modifier = 0;
+            for (int k = 0; k < triplesRemainder; k++)
+            {
+                myRemainders.Add(deck[deck.Count - triplesRemainder + modifier]);
+                modifier++;
+            }
+            deckTriples.Add(myRemainders);
+            triples++;
+        }
+        deckLocation = 0;
+    }
+
+    public void DealFromDeck() // draw 3 from deck
+    {
+        foreach (Transform child in deckButton.transform)
+        {
+            if (child.CompareTag("Card"))
+            {
+                deck.Remove(child.name);
+                discardPile.Add(child.name);
+                Destroy(child.gameObject);
+            }
+        }
+
+        if (deckLocation < triples)
+        {
+            triplesOnDisplay.Clear();
+            float xOffset = 2.5f;
+            float zOffset = -0.2f;
+
+            foreach (string card in deckTriples[deckLocation])
+            {
+                GameObject newTopCard = Instantiate(cardPrefab, new Vector3(deckButton.transform.position.x + xOffset, deckButton.transform.position.y, deckButton.transform.position.z + zOffset), Quaternion.identity, deckButton.transform);
+                xOffset += 0.5f;
+                zOffset -= 0.2f;
+                newTopCard.name = card;
+                triplesOnDisplay.Add(card);
+                newTopCard.GetComponent<Selectable>().faceUp = true;
+            }
+            deckLocation++;
+        }
+        else
+        {
+            RestackTopDeck();
+        }
+    }
+
+    private void RestackTopDeck()
+    {
+        foreach (string card in discardPile)
+        {
+            deck.Add(card);
+        }
+        discardPile.Clear();
+        SortDeckIntoTriples();
     }
 }
