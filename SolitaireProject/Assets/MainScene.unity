@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 42270609}
   - component: {fileID: 42270611}
   - component: {fileID: 42270610}
+  - component: {fileID: 42270612}
   m_Layer: 0
   m_Name: Bottom0
   m_TagString: Bottom
@@ -240,6 +241,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &42270612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42270607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 0
+  suit: 
+  value: 0
+  row: 0
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &211658518
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +399,7 @@ GameObject:
   - component: {fileID: 273877937}
   - component: {fileID: 273877939}
   - component: {fileID: 273877938}
+  - component: {fileID: 273877940}
   m_Layer: 0
   m_Name: Bottom1
   m_TagString: Bottom
@@ -496,6 +516,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &273877940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273877935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 0
+  suit: 
+  value: 0
+  row: 1
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &277582051
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +577,7 @@ GameObject:
   - component: {fileID: 356090613}
   - component: {fileID: 356090615}
   - component: {fileID: 356090614}
+  - component: {fileID: 356090616}
   m_Layer: 0
   m_Name: Bottom2
   m_TagString: Bottom
@@ -655,6 +694,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &356090616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356090611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 0
+  suit: 
+  value: 0
+  row: 2
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &711903815
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc2629e66fb00049a320c367c562970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot1: {fileID: 0}
 --- !u!114 &747036978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,6 +860,7 @@ MonoBehaviour:
   - {fileID: 1250254561}
   triplesOnDisplay: []
   deck: []
+  discardPile: []
 --- !u!4 &747036979
 Transform:
   m_ObjectHideFlags: 0
@@ -828,6 +887,7 @@ GameObject:
   - component: {fileID: 839274645}
   - component: {fileID: 839274647}
   - component: {fileID: 839274646}
+  - component: {fileID: 839274648}
   m_Layer: 0
   m_Name: Bottom4
   m_TagString: Bottom
@@ -944,6 +1004,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &839274648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839274643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 0
+  suit: 
+  value: 0
+  row: 4
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &940518035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,6 +1116,7 @@ GameObject:
   - component: {fileID: 950685103}
   - component: {fileID: 950685105}
   - component: {fileID: 950685104}
+  - component: {fileID: 950685106}
   m_Layer: 0
   m_Name: Bottom5
   m_TagString: Bottom
@@ -1154,6 +1233,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &950685106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950685101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 0
+  suit: 
+  value: 0
+  row: 5
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &1005870264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1263,7 @@ GameObject:
   - component: {fileID: 1005870266}
   - component: {fileID: 1005870268}
   - component: {fileID: 1005870267}
+  - component: {fileID: 1005870269}
   m_Layer: 0
   m_Name: Top1
   m_TagString: Top
@@ -1282,6 +1380,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1005870269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005870264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 1
+  suit: 
+  value: 0
+  row: 1
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &1022970501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1410,7 @@ GameObject:
   - component: {fileID: 1022970503}
   - component: {fileID: 1022970505}
   - component: {fileID: 1022970504}
+  - component: {fileID: 1022970506}
   m_Layer: 0
   m_Name: Bottom3
   m_TagString: Bottom
@@ -1410,6 +1527,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1022970506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022970501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 0
+  suit: 
+  value: 0
+  row: 3
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &1071397274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +1557,7 @@ GameObject:
   - component: {fileID: 1071397276}
   - component: {fileID: 1071397278}
   - component: {fileID: 1071397277}
+  - component: {fileID: 1071397279}
   m_Layer: 0
   m_Name: Bottom6
   m_TagString: Bottom
@@ -1538,6 +1674,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1071397279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071397274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 0
+  suit: 
+  value: 0
+  row: 6
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &1250254561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1704,7 @@ GameObject:
   - component: {fileID: 1250254563}
   - component: {fileID: 1250254565}
   - component: {fileID: 1250254564}
+  - component: {fileID: 1250254566}
   m_Layer: 0
   m_Name: Top3
   m_TagString: Top
@@ -1666,6 +1821,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1250254566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250254561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 1
+  suit: 
+  value: 0
+  row: 3
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &1637221965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,6 +1851,7 @@ GameObject:
   - component: {fileID: 1637221967}
   - component: {fileID: 1637221969}
   - component: {fileID: 1637221968}
+  - component: {fileID: 1637221970}
   m_Layer: 0
   m_Name: Top0
   m_TagString: Top
@@ -1794,6 +1968,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1637221970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637221965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 1
+  suit: 
+  value: 0
+  row: 0
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1 &1728253513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,6 +2035,7 @@ GameObject:
   - component: {fileID: 1903454709}
   - component: {fileID: 1903454711}
   - component: {fileID: 1903454710}
+  - component: {fileID: 1903454712}
   m_Layer: 0
   m_Name: Top2
   m_TagString: Top
@@ -1959,6 +2152,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1903454712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903454707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a063a1f09ba634292d78db26a9eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 1
+  suit: 
+  value: 0
+  row: 2
+  faceUp: 0
+  inDeckPile: 0
 --- !u!1001 &3369606833203322254
 PrefabInstance:
   m_ObjectHideFlags: 0

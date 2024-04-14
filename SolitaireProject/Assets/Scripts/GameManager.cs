@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] topPos;
 
     public static string[] suits = new string[] { "C", "D", "H", "S" };
-    public static string[] values = new string[] { "A", "2", "3", "4", "5", "6", "7", "8", "9'", "10", "J", "Q", "K" };
+    public static string[] values = new string[] { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
 
     public List<string>[] bottoms;
     public List<string>[] tops;
@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(0.01f); // don't deal all at once, quickly deal one at a time
                 GameObject newCard = Instantiate(cardPrefab, new Vector3(bottomPos[i].transform.position.x, bottomPos[i].transform.position.y - yOffset, bottomPos[i].transform.position.z - zOffset), Quaternion.identity, bottomPos[i].transform);
                 newCard.name = card;
+                newCard.GetComponent<Selectable>().row = i;
                 if (card == bottoms[i][bottoms[i].Count - 1]) // the last one
                 {
                     newCard.GetComponent<Selectable>().faceUp = true;
@@ -187,6 +188,7 @@ public class GameManager : MonoBehaviour
                 newTopCard.name = card;
                 triplesOnDisplay.Add(card);
                 newTopCard.GetComponent<Selectable>().faceUp = true;
+                newTopCard.GetComponent<Selectable>().inDeckPile = true;
             }
             deckLocation++;
         }
@@ -198,6 +200,7 @@ public class GameManager : MonoBehaviour
 
     private void RestackTopDeck()
     {
+        deck.Clear();
         foreach (string card in discardPile)
         {
             deck.Add(card);
