@@ -1,1 +1,1 @@
-Creating following tutorial by Megalomobile
+Created by following tutorial by Megalomobile
