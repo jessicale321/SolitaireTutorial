@@ -70,6 +70,7 @@ public class UserInput : MonoBehaviour
     private void Deck()
     {
         gameManager.DealFromDeck();
+        slot1 = this.gameObject;
     }
 
     private void Card(GameObject selected)
