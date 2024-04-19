@@ -1,1 +1,1 @@
-Created by following tutorial by Megalomobile
+Complete solitaire game made with Unity by following tutorial by Megalomobile
