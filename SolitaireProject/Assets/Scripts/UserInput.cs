@@ -75,9 +75,9 @@ public class UserInput : MonoBehaviour
 
     private void Card(GameObject selected)
     {
-        if (!selected.GetComponent<Selectable>().faceUp)
+        if (selected.GetComponent<Selectable>().faceUp == false)
         {
-            if (!Blocked(selected))
+            if (IsBlocked(selected) == false)
             {
                 selected.GetComponent<Selectable>().faceUp = true;
                 slot1 = this.gameObject;
@@ -85,13 +85,13 @@ public class UserInput : MonoBehaviour
         }
         else if (selected.GetComponent<Selectable>().inDeckPile)
         {
-            if (!Blocked(selected))
+            if (IsBlocked(selected) == false)
             {
                 if (slot1 == selected)
                 {
                     if (DoubleClick())
                     {
-
+                        AutoAddToTop(selected);
                     }
                 }
                 else
@@ -108,7 +108,7 @@ public class UserInput : MonoBehaviour
 
         else if (slot1 != selected)
         {
-            // new card is eligible to stack on the old card
+            // new card is eligible to stack on the old card - BUG: need to check if that card is blocked
             if (Stackable(selected))
             {
                 Stack(selected);
@@ -123,7 +123,7 @@ public class UserInput : MonoBehaviour
         {
             if (DoubleClick())
             {
-                AutoStack(selected);
+                AutoAddToTop(selected);
             }
         }
     }
@@ -251,7 +251,7 @@ public class UserInput : MonoBehaviour
         slot1 = this.gameObject;
     }
 
-    private bool Blocked(GameObject selected)
+    private bool IsBlocked(GameObject selected)
     {
         Selectable s2 = selected.GetComponent<Selectable>();
         if (s2.inDeckPile == true)
@@ -291,7 +291,7 @@ public class UserInput : MonoBehaviour
         }
     }
 
-    private void AutoStack(GameObject selected)
+    private void AutoAddToTop(GameObject selected)
     {
         for (int i = 0; i < gameManager.topPos.Length; i++)
         {

@@ -1041,7 +1041,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e0cf577d95efda140a4dd2e8fdafed42, type: 3}
   - {fileID: 21300000, guid: 8d45eaf5f67c41241917dd416a2219eb, type: 3}
   - {fileID: 21300000, guid: 040fdaacb1b3c4a4abc79014ef5951b7, type: 3}
-  - {fileID: 21300000, guid: 01cc0061c84cc8443be9bcc2cbf55f7c, type: 3}
+  - {fileID: 21300000, guid: 543829c493437034e82b55092c673c30, type: 3}
   cardPrefab: {fileID: 3369606832237163381, guid: 44ab178505b00354c929769d2440815b,
     type: 3}
   deckButton: {fileID: 211658518}
